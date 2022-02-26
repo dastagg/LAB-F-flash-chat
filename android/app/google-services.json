@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "522639878298",
+    "project_id": "flash-chat-f07ea",
+    "storage_bucket": "flash-chat-f07ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522639878298:android:9d8af97c311b4fec1a9723",
+        "android_client_info": {
+          "package_name": "com.dastagg.flash_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "522639878298-s4k8phimn5cjavumhlei6o9pja02s9hj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQraoBsGi3s-0jpq2tAYH9QGTGUaNbXn0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "522639878298-s4k8phimn5cjavumhlei6o9pja02s9hj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
