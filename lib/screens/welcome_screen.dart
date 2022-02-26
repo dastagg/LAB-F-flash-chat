@@ -11,8 +11,8 @@ class WelcomeScreen extends StatefulWidget {
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProviderStateMixin {
-
+class _WelcomeScreenState extends State<WelcomeScreen>
+    with SingleTickerProviderStateMixin {
   late AnimationController controller;
   late Animation animation;
 
@@ -20,25 +20,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
   void initState() {
     super.initState();
 
-    controller = AnimationController(
-      duration: const Duration(seconds: 1),
-      vsync: this
-      // upperBound: 100.0,
-    );
+    controller =
+        AnimationController(duration: const Duration(seconds: 3), vsync: this);
 
-    animation = CurvedAnimation(
-      parent: controller,
-      curve: Curves.decelerate,
-    );
+    animation = ColorTween(begin: Colors.red, end: Colors.blue).animate(controller);
+
 
     controller.forward();
-    animation.addStatusListener((status) {
-      if (status == AnimationStatus.completed) {
-        controller.reverse(from: 1.0);
-      } else if (status == AnimationStatus.dismissed){
-        controller.forward();
-      }
-    });
+
 
     controller.addListener(() {
       setState(() {});
@@ -52,11 +41,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
     super.dispose();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: animation.value,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
@@ -69,7 +57,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
                   tag: 'logo',
                   child: SizedBox(
                     child: Image.asset('images/logo.png'),
-                    height: animation.value * 100.0,
+                    height: 60.0,
                   ),
                 ),
                 const Text(
@@ -116,11 +104,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
                 borderRadius: BorderRadius.circular(30.0),
                 elevation: 5.0,
                 child: MaterialButton(
-                  onPressed: () { Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) {
-                    return const RegistrationScreen();
-                    }),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return const RegistrationScreen();
+                      }),
                     );
                   },
                   minWidth: 200.0,
