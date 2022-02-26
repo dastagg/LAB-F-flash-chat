@@ -19,13 +19,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
     super.initState();
 
     controller = AnimationController(
-      duration: Duration(seconds: 1),
+      duration: const Duration(seconds: 1),
       vsync: this,
     );
 
     controller.forward();
 
     controller.addListener(() {
+      setState(() {});
       print(controller.value);
     });
   }
@@ -34,7 +35,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.red.withOpacity(controller.value),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
