@@ -83,7 +83,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
               height: 48.0,
             ),
             RoundedButton(
-                text: const Text('Log In'),
+                text: 'Log In',
                 color: Colors.blueAccent,
                 onPressed: () {
                   Navigator.push(
@@ -94,7 +94,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                   );
                 }),
             RoundedButton(
-                text: const Text('Register'),
+                text: 'Register',
                 color: Colors.blueAccent,
                 onPressed: () {
                   Navigator.push(
